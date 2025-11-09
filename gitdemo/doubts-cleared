@@ -1,0 +1,460 @@
+Excellent — you’re asking at the **perfect stage** of learning Git 👏
+
+Let’s break down that image step by step clearly so you understand what those `git config` commands are doing.
+
+---
+
+## 🧩 Step 1: What does “config” mean in Git?
+
+The command
+
+```
+git config
+```
+
+is short for **“configure Git settings.”**
+It’s how you tell Git about **your name, email, editor, etc.** — information Git needs to record with every commit.
+
+When you make a commit, Git stores:
+
+```
+Author: Your Name <youremail@example.com>
+```
+
+So Git needs to know who you are — that’s what we set using `git config`.
+
+---
+
+## ⚙️ Step 2: Meaning of the commands in the image
+
+### 🟢 1️⃣ Set your name
+
+```bash
+git config --global user.name "My Name"
+```
+
+* `git config` → command to change settings
+* `--global` → means “apply this for **all repositories** on this computer”
+* `user.name` → setting the “author name” that will appear in commits
+* `"My Name"` → replace this with your real name
+
+So now Git knows your name when it saves a commit.
+
+---
+
+### 🟢 2️⃣ Set your email
+
+```bash
+git config --global user.email "someone@email.com"
+```
+
+* `user.email` → sets the email linked to your commits
+* Should usually be the same email as your **GitHub account** (so commits link properly online).
+
+---
+
+### 🟢 3️⃣ Check your settings
+
+```bash
+git config --list
+```
+
+This shows all the Git configuration values currently set —
+you’ll see something like:
+
+```
+user.name=My Name
+user.email=someone@email.com
+```
+
+---
+
+## 🧠 Step 3: What does `--global` mean?
+
+Git can store settings in **three levels**:
+
+| Level       | Scope                         | Description                                    |
+| ----------- | ----------------------------- | ---------------------------------------------- |
+| `--system`  | For all users on the computer | Stored in system config (rarely used)          |
+| `--global`  | For your user account         | Stored in your home folder (affects all repos) |
+| *(no flag)* | For one specific project only | Stored inside that repo’s `.git/config`        |
+
+So:
+
+* `--global` → sets values that apply **everywhere**
+* No flag → sets only for **that one project**
+
+---
+
+### 🧩 Example:
+
+Let’s say:
+
+* You work on two projects: `app1` and `app2`
+* You run `git config --global user.name "Sanika"`
+
+✅ Then both `app1` and `app2` will use `"Sanika"` as the author name automatically.
+
+If you want **a different name or email** for just one project:
+
+```bash
+git config user.name "Project Name"
+```
+
+(without `--global`) — it only affects that single repo.
+
+---
+
+## 🔍 Step 4: Where does Git store this info?
+
+When you run `--global`, Git stores your name and email in a file:
+
+```
+~/.gitconfig
+```
+
+You can open this file (with Notepad or VS Code) and see:
+
+```ini
+[user]
+    name = My Name
+    email = someone@email.com
+```
+
+---
+
+### 🧠 In short:
+
+| Command                                            | What it does                      |
+| -------------------------------------------------- | --------------------------------- |
+| `git config --global user.name "Your Name"`        | Set your name for all repos       |
+| `git config --global user.email "you@example.com"` | Set your email for all repos      |
+| `git config --list`                                | Check what’s currently configured |
+
+---
+
+Would you like me to show how the **commit message will look** before and after setting your name/email (so you can see why this config matters)?
+
+//
+//
+global means what?
+That’s an *excellent question* 🙌 and you’re absolutely right to stop and understand this deeply — because this “global” thing is **confusing at first** if you’re just starting out.
+Let’s go **step by step**, super simple and clear — no assumptions, no jargon.
+
+---
+
+## 🧩 Step 1: What “git config” really does
+
+When you install Git, it needs to know **who you are** — your name and email — so that when you make changes and save versions (commits), Git can record:
+
+> “This change was made by Sanika [sanika@email.com](mailto:sanika@email.com)”
+
+That’s all this setup is for — to let Git *sign your commits* with your name and email.
+
+---
+
+## 🧠 Step 2: Where Git stores this information
+
+Git can store your name/email in **three possible places (levels):**
+
+| Level      | Command                      | Where it's stored                      | Applies to                          |
+| ---------- | ---------------------------- | -------------------------------------- | ----------------------------------- |
+| **System** | `git config --system ...`    | Whole computer (for all users)         | Rarely used                         |
+| **Global** | `git config --global ...`    | In your **user account** (home folder) | For **all repos you create or use** |
+| **Local**  | `git config ...` *(no flag)* | Inside **one project folder**          | Only for that one repo              |
+
+---
+
+## 🧩 Step 3: What “--global” means in plain words
+
+When you write:
+
+```bash
+git config --global user.name "Sanika"
+git config --global user.email "sanika@email.com"
+```
+
+It means:
+
+> “Hey Git, whenever I create or use *any Git repository* on this computer,
+> use this name and email by default for my commits.”
+
+---
+
+### 🚫 It does **NOT** mean:
+
+* Git will start tracking all your folders. ❌
+* Git will access every folder or file. ❌
+* Git will make every folder a repository. ❌
+
+---
+
+### ✅ It means:
+
+Git just **remembers your identity** globally —
+so that whenever you start using Git in *any folder* (like `git init`),
+it already knows who you are.
+
+It’s like setting your name once in your phone —
+you don’t have to type your name again when sending messages from different apps.
+
+---
+
+## 🖥️ Example:
+
+Let’s say your computer has these folders:
+
+```
+Documents/
+│
+├── Folder1/
+│     ├── randomfile.txt
+│
+├── MyWebsite/
+│     ├── index.html
+│     ├── script.js
+│
+└── SchoolNotes/
+      ├── notes.docx
+```
+
+Now, you install Git and run:
+
+```bash
+git config --global user.name "Sanika"
+git config --global user.email "sanika@email.com"
+```
+
+✅ What happens:
+
+* Git stores your name/email in a file inside your **home directory** (not in these folders).
+* Nothing changes in Folder1, MyWebsite, or SchoolNotes.
+* Git is **not tracking anything yet**.
+
+---
+
+## 🧩 Step 4: When does it actually apply?
+
+Later, suppose you go inside **MyWebsite** folder and run:
+
+```bash
+git init
+```
+
+Now this folder becomes a Git repository.
+
+When you make your first commit:
+
+```bash
+git add .
+git commit -m "first commit"
+```
+
+Git will use:
+
+```
+Author: Sanika <sanika@email.com>
+```
+
+Because you set that globally before.
+
+You didn’t have to set it again!
+
+---
+
+## 📁 Step 5: What if I want a *different* name/email for just one project?
+
+You can override the global setting like this:
+
+```bash
+git config user.name "Sanika College"
+git config user.email "college@email.com"
+```
+
+⚡ (Notice: no `--global` here)
+That means this name/email will apply **only for this one project**.
+
+---
+
+## 💡 Analogy
+
+Think of it like this:
+
+| Thing              | Example                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| **Global setting** | You set your name on your computer → all apps know it (default)                     |
+| **Local setting**  | You change your name inside one app only (like Zoom) → only Zoom uses that new name |
+| **No setting**     | If you never set your name, apps won’t know who you are                             |
+
+---
+
+## 🔍 Step 6: How to see where Git saved it
+
+If you run:
+
+```bash
+git config --list
+```
+
+You’ll see something like:
+
+```
+user.name=Sanika
+user.email=sanika@email.com
+```
+
+And if you check your home folder (on Windows, `C:\Users\<yourname>\`),
+you’ll find a file named:
+
+```
+.gitconfig
+```
+
+Inside that, Git saved:
+
+```ini
+[user]
+    name = Sanika
+    email = sanika@email.com
+```
+
+That’s what `--global` did — it just wrote this info here.
+
+---
+
+### 🔊 **In summary (super simple version):**
+
+* `--global` = remember my name/email for all future Git projects on this computer
+* It doesn’t track your folders
+* It doesn’t give Git access to your files
+* It just saves your identity as the “author” of commits
+
+---
+
+Would you like me to draw a **simple diagram** that shows:
+
+* your computer folders,
+* where Git saves global config,
+* and how it applies when you initialize a Git repo?
+
+It’ll make this crystal clear visually.
+//
+//
+//
+//
+//
+
+------>>>>>  HOW TO USE GIT BY OPENING FILE DOUBT??????
+💯 Exactly right! You got it perfectly — and that’s a *very* important concept to understand early.
+Let’s break it down clearly again so you know **exactly what’s happening when you do that.**
+
+---
+
+## 🧭 Step-by-step explanation
+
+### 🪶 Step 1: You open Git Bash
+
+You can open Git Bash anywhere, but let’s say right now it opens in your home directory:
+
+```
+C:\Users\Sanika>
+```
+
+---
+
+### 🪶 Step 2: You “go inside” your project folder
+
+You use the `cd` (change directory) command to move into the folder where your project lives.
+
+Example:
+
+```bash
+cd Documents/MyWebsite
+```
+
+Now your prompt will show something like:
+
+```
+C:\Users\Sanika\Documents\MyWebsite>
+```
+
+✅ That means: *you’re now “inside” the MyWebsite folder.*
+
+---
+
+### 🪶 Step 3: You create a Git repository **in this folder**
+
+You run:
+
+```bash
+git init
+```
+
+Git will say something like:
+
+```
+Initialized empty Git repository in C:/Users/Sanika/Documents/MyWebsite/.git/
+```
+
+💡 That means Git just created a hidden folder named `.git` inside `MyWebsite`.
+That’s where Git stores **all version history and settings** for *this specific project only.*
+
+---
+
+### 🪶 Step 4: Now Git is *active* for this folder
+
+From now on, when you’re inside `MyWebsite` and type Git commands (like `git add`, `git commit`, `git status`),
+Git knows you’re talking about *this project only* — because of that hidden `.git` folder.
+
+It won’t affect your other folders like `Documents/Folder1` or `SchoolNotes`.
+
+---
+
+### 🪶 Step 5: You can start tracking files
+
+For example:
+
+```bash
+git add .
+git commit -m "Initial version of my website"
+```
+
+Now Git saves your website files’ current versions.
+And the “author” info (your name and email) comes from your **global config** unless you override it locally.
+
+---
+
+### 🧩 So in simple words:
+
+| What you do                | What it means                                            |
+| -------------------------- | -------------------------------------------------------- |
+| `git init` inside a folder | “Make *this folder* a Git project.”                      |
+| `git add` / `git commit`   | “Track and save versions of files *inside this folder*.” |
+| `git config --global ...`  | “Remember my name/email for all projects.”               |
+| `cd` command               | “Move to the folder where I want to run Git commands.”   |
+
+---
+
+### 🪄 Example walkthrough
+
+Let’s visualize:
+
+```
+Documents/
+│
+├── MyWebsite/   ← you open Git Bash here and type `git init`
+│     ├── index.html
+│     ├── style.css
+│     └── script.js
+│     └── .git/   ← Git creates this hidden folder automatically
+│
+└── Folder1/
+      ├── randomfile.txt
+```
+
+👉 Only **MyWebsite** becomes a Git repository.
+👉 **Folder1** remains a normal folder — Git doesn’t touch it.
+
+---
+
+Would you like me to show you a **simple diagram** (like a visual flow) of what happens when you `cd` and `git init`, including that hidden `.git` folder? It makes this even easier to visualize.

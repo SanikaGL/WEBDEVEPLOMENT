@@ -1,0 +1,7 @@
+div p:first-child{
+    color:bisque;
+    background-color:red;
+}
+div p{
+    background-color: aqua;
+}

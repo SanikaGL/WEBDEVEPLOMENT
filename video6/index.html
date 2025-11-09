@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+ </head>
+<body>
+    <form action="post">
+        <!-- with input tag we have label tag -->
+         <!-- div is to divide the each part or input in a separate line in form -->
+        <div> 
+        <label for = "username">enter ur username:</label>
+        <input type ="text" id ="username" " name="username" placeholder="enter you username" >
+        </div>
+        <div>
+        <input type="password" name="password" placeholder="Enter your password">
+        </div>
+        <div>
+        <input type="radio" id="male" name="gender" value="male">
+        <br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <br>
+        <label for="female">female</label>
+        <input type="radio" id="female" name="gender" value="female">
+        
+        </div>
+        <div>
+            <!-- image is for submit only but we use image instead of submit button and the browser sends data like where exactly we clicked not the full image -->
+            
+        </div>
+        <!-- about text area and select tag -->
+         <div>
+            <label for = "comment"> enter your name</label>
+            <!-- br tag not recomended -->
+            <br>
+            <textarea id ="comment" name = "comment" rows="10" cols="50"></textarea>        
+         </div>
+         <div>
+            <!-- select tag -->
+             <select name="fruits">
+               <option value="apple">Apple</option>
+               <option value="banana">Banana</option>
+               <option value="cherry">Cherry</option>
+             </select>
+         </div>
+
+    </form>
+</body>
+</html> 
+        

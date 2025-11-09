@@ -1,0 +1,351 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+}
+.main {
+    background-image: url("assets/images/bgnetflix.jpg");
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: max(1200px,1600px, 100vw);
+    
+
+
+}
+.main .box{
+    height: 70vh;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    opacity:0.69;
+    top:0;
+
+
+}
+
+.main nav {
+    position: relative;
+    top: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80vw;
+    margin: auto;
+    height: 62px;
+}
+nav div{
+    display:flex;
+    gap:7px;
+}
+nav button{
+    position: relative;
+    z-index:10;
+
+}
+
+nav img {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    z-index: 100;
+}
+.hero {
+    font-family: 'Martel Sans', sans-serif;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+}
+.hero> :first-child{
+    font-weight:bolder;
+    font-size:30px;
+    text-align: center;
+}
+.separation{
+    height:10px;
+    background-color: rgb(66, 63, 63);
+}
+.herobutton input{
+    border:1px solid grey;
+    background-color: transparent;
+    color:white;
+    padding:11px 60px;
+    border-radius:5px;
+    text-align: left;
+    font-weight: 100;
+
+}
+.herobutton button{
+    background-color: rgb(224, 15, 15);
+    color:white;
+    font-weight: 1000;
+    padding:10px 40px;
+    border-radius:5px;
+    /* text-decoration: solid; */
+    border:1px solid rgb(224, 15, 15);
+}
+.herobutton{
+    display:flex;
+    gap:10px;
+}
+.red-button{
+    background-color: rgb(224, 15, 15);
+    color:white;
+    border:1px solid rgb(224, 15, 15);
+    border-radius:3px;
+    padding:2px 3px;
+
+}
+.white-button{
+    border:1px solid grey;
+    border-radius:3px;
+    padding:2px 3px;
+    background-color:transparent;
+    color:white;
+}
+.first-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin:auto;
+    color:white;
+
+}
+.section-img img{
+    height: 300px;
+   
+    z-index: 10;
+}
+.section-img{
+    position: relative;
+}
+
+.section-img video{
+    position: absolute;
+    right:55px;
+    top:62px;
+    width:292px;
+    
+}
+.first-section div{
+    display:flex;
+    flex-direction:column;
+
+}
+.first-section div :first-child{
+    font-size: 48px;
+    font-weight: bolder;
+    
+}
+.first-section div :nth-last-child{
+    font-size: medium;
+    font-weight: 100;
+}
+.second-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin:auto;
+    color:white;
+}
+.second-section div{
+    display:flex;
+    flex-direction:column;
+}
+.second-section div :first-child{
+    font-size: 48px;
+    font-weight: bolder;
+}  
+
+.third-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin:auto;
+    color:white;
+}
+.third-section div{
+    display:flex;
+    flex-direction:column;
+
+}
+.third-section div :first-child{
+    font-size: 48px;
+    font-weight: bolder;
+}
+.fourth-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70vw;
+    margin:auto;
+    color:white;
+}
+.fourth-section div{
+    display:flex;
+    flex-direction:column;
+
+}
+.fourth-section div :first-child{
+    font-size: 48px;
+    font-weight: bolder;
+}
+.fourth-section img{
+    width:400px;
+}
+.faq{
+    height: 83vh;
+    width: 100vw;
+    
+    color:white;
+}
+h1 {
+    margin-top: 20px;
+   text-align: center;
+}
+.faq .faq-flex{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:50px;
+
+}
+.faq-flex span{
+    /* margin:100px 50px; */
+    /* padding:10px 300px; */
+    background-color: rgb(55, 54, 54);
+    align-items: ;
+    color:aliceblue;
+    width:500px;
+    height:40px;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    
+
+    
+
+}
+.faq span:hover{
+    background-color:rgb(81, 79, 79);
+}
+.last{
+    width:100vw;
+    /* height:100vh; */
+    color: aliceblue;
+}
+.last-flex{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center center;
+    align-items: center;
+
+    gap:10px;
+    margin-bottom: 50px;
+}
+.last-flex button{
+    background-color: rgb(224, 15, 15);
+    color:white;
+    font-weight: 1000;
+    padding:20px 60px;
+    border-radius:5px;
+    /* text-decoration: solid; */
+    border:1px solid rgb(224, 15, 15);
+}
+.last-flex input{
+    border:1px solid grey;
+    background-color: transparent;
+    color:white;
+    padding:15px 60px;
+    border-radius:5px;
+    text-align: left;
+    font-weight: 100;
+}
+.last-flex :first-child{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.last-gap{
+    display: flex;
+    gap:10px;
+}
+.footer{
+    display:flex;
+    flex-direction: row;
+    gap:150px;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin:auto; */
+    /* width:60vw; */
+}
+.footer-item{
+    display:flex;
+    flex-direction: column;
+    /* color: aliceblue; */
+    gap:20px;
+
+}
+.footer-item a{
+    color: white;
+}
+.questions{
+    color: white;
+    margin-bottom: 30px;;
+}
+footer{
+    width:65vw;
+    
+    margin: auto;
+    position: relative;
+    top:20px;
+    /* bottom:100px; */
+
+
+}
+.lastbutton{
+    margin-top: 50px;
+    padding:7px 100px 7px 2px;
+    background-color: transparent;
+    color: white;
+    border-radius: 2px;
+    border: 2px solid grey;
+}
+.lastline{
+    margin-top: 40px;
+    color: rgb(167, 166, 164);
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.lastsecondline{
+    margin-top: 40px;
+    color: rgb(241, 233, 233);
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.lastline span a{
+    color: rgb(88, 88, 234);
+    
+}

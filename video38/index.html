@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <style>
+        .container {
+            border: 2px solid red;
+            display: flex;
+            height: 120vh;
+            justify-content: center; /*which makes box come in center with repect its main axis only+ */
+            align-items: center;/*it makes item come in center with respect to height*/
+            flex-direction: row;/* also column reverse
+            /* flex-wrap: wrap; */
+            /* align-content: center; /*can be center;this is used when ther more tahn one line */
+            /* there is no justify-items  in flexbox; */
+            /* flex-flow: row wrap; */
+            /* gap: 30px; 
+            row-gap: 40px;
+            column-gap: 10px; */
+            /* gap: 40px 10px; */
+
+        }
+
+        .item {  
+            /* flex-grow: 1; */
+            height: 92px;
+            width: 92px;
+            border: 2px solid black;
+            /* margin: 4px; */
+            background-color: blueviolet;
+        }
+ /* order is a item property and it orders the item more the order last it comes */
+        /* .order-1{
+            order: 1;
+        }
+        .order-2{
+            order: 2;
+        }
+        .order-3{
+            order: 3;
+        } */
+/* 
+        .item1{   */
+            /* flex-grow: 2; *//*that box grows double of other box*/
+            /* flex-shrink: 2; *//*when screen size decreases that box decreases double than other box*/
+            /* align-self: flex-end; */it is for particular item only for one ;
+        /* } */
+        .item3{
+            position:sticky;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="item item1">1</div>
+            <div class="item item2">2</div>
+            <div class="item item3">3</div>
+            <div class="item order-1">4</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item itemlast"></div>
+            
+         
+        </div>
+    </main>
+
+</body>
+
+</html>

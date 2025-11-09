@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 30vw;
+            /* 30% of the full browser width */
+            height: 40vh;
+            /* 30% of the full browser height */
+            background: lightblue;
+            margin:auto;
+            padding:2px;
+            border : solid black;
+           
+        }
+
+        .inner {
+            width: 40vw;
+            /* still 30% of the full browser width, not 30% of .outer */
+            height: 50vh;
+            /* still 30% of the full browser height */
+            background: coral;
+            overflow: scroll;
+            text-align: center;
+            /* margin: auto;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">kjsskfis</div>
+    </div>
+</body>
+
+</html>

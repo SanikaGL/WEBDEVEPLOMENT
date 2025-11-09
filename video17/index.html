@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* element selecctor */
+        div{
+            background-color: aqua;
+        }
+        /* class selector */
+        .red{
+            background-color: pink;
+        }
+        /* id selector */
+        #idselector{
+            background-color: purple;
+        }
+        /* child selector is for direct paragraph inside div */
+        div > p {
+          background-color: rgb(87, 157, 16);
+        }
+        /* decendent selector is for paragraph inside div inside whatever like article etc*/
+        div p {
+            background-color:  palevioletred;
+        }
+        /* universal selector */
+        *{
+             margin: 1px; /*mkmkkfknnfjjjfnnfnjnfn*/
+             padding:1px;
+             box-sizing:border-box;
+             /* border : 5px solid black; */
+        }
+        /* pseudo selector */
+        a:visited{
+            color: red;
+        }
+        a:link{
+            color: cadetblue;
+        }
+        a:active{
+            background-color: red;
+        }
+        a:hover{
+            background-color: aqua;
+        }
+        p:first-child{
+            background-color: red;
+        }
+
+         
+    </style>
+</head>
+<body>
+    <div>
+     i am element selector
+     <p>jhbbbhbbbs</p>
+    </div>
+    <div class = "red"> ia m class selector</div>
+    <div id = "idselector">i am id selector</div>
+    <div><p> i am child selector</p></div>
+    <div>
+        <article>
+             <p>
+                i am descendent selector
+             </p>
+             <p>ghjjfhjhjhfh</p>
+        </article>
+   </div>
+   <!-- <span>bwjdhjdejdjhhjhbdjhbdjb</span> -->
+   <a href = "https://www.google.com">go to google </a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css list style</title>
+</head>
+<style>
+    nav ul li{
+        /* list style is for changing the marker */
+        list-style: devanagari;
+        background-color: yellow;
+        /* list-style-type:"emoji  :  "; can also be emoji marker" */
+        /* list style inside does thatyellow to come including marker */
+        list-style-position: inside;
+        border:2px solid black;
+        list-style-image:url("/*can be image add image link here*/");
+        list-style: disc inside url("add image url");/*these three can be done together
+        but disc or url one at once*/
+        list-style: none;/*makes marker disappear*/
+    }
+</style>
+<body>
+    <nav>
+        <ul >
+        <li>Home</li>
+        <li>about</li>
+        <li>contact</li>
+        </ul>
+    </nav>
+    <div>
+        
+    </div>
+</body>
+</html>

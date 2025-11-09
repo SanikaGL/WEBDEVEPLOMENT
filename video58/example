@@ -1,0 +1,118 @@
+let func1 = (x) => { ... }
+func1 = 10; // ✅ allowed, but not good
+//
+// 
+// 
+Arrow Function Syntax Explained
+
+const functionName = (parameters) => {
+    // function body
+}
+
+Examples:
+
+const add = (a, b) => a + b;     // single line return (no {})
+const greet = () => console.log("Hello!");
+const square = x => x * x;       // single parameter (no need for parentheses)
+
+
+---
+
+🧠 Arrow Functions vs Normal Functions (Main Differences)
+
+Feature	Normal Function	Arrow Function
+
+Syntax	function name() {}	const name = () => {}
+this keyword	Has its own this	Inherits this from outer scope
+Can be used before declaration (hoisting)	✅ Yes	❌ No
+Best used for	Object methods, constructors	Callbacks, short functions
+
+
+
+---
+
+⚡ Example Use Case
+
+// Normal function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const multiply = (a, b) => a * b;
+
+console.log(add(2, 3));       // 5
+console.log(multiply(2, 3));  // 6
+
+
+---
+
+// 🧾 Summary
+// 
+const multiply = function(a, b) {
+  return a * b;
+};
+// 
+// 
+🧠 Why Developers Use Arrow Functions
+
+1. Shorter code
+
+const add = (a, b) => a + b;
+
+instead of
+
+function add(a, b) {
+    return a + b;
+}
+
+
+2. Better for callbacks Example:
+
+[1, 2, 3].forEach(num => console.log(num));
+// 
+// 
+3) Hoisting — important difference
+
+Function declaration (hoisted):
+
+console.log(foo(2)); // works -> 4
+
+function foo(n) { return n * 2; }
+
+Function expression (not hoisted the same):
+
+console.log(bar(2)); // ERROR: bar is not defined (if const/let) or undefined if var
+
+const bar = (n) => n * 2;
+
+So: declarations are usable before they appear in code; expressions are not.
+// 
+// 
+// 
+// 
+5) Parameters (x) — where do values come from? Can they be changed?
+
+When you write:
+
+const f = (x) => {
+  console.log(x);
+}
+f(34);
+
+x is a parameter (a local variable inside the function).
+
+The value 34 is passed as an argument when calling f(34).
+
+Inside the function, x initially equals 34. You can change x inside the function — but that change is local to the function:
+
+
+function change(x) {
+  x = x + 10;
+  console.log("inside:", x); // 44
+}
+let value = 34;
+change(value);
+console.log("outside:", value); // 34  (original value not changed)
+
+Primitive values (number/string/boolean) are passed by value — the function gets a copy. For objects, the reference is passed, so modifying object properties inside the function can affect the original object.
